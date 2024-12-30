@@ -22,7 +22,7 @@ app.use("/api", router);
 
 // route
 app.get("/", (req, res) => {
-  res.send("Animal Bazaar server is running...");
+  res.send("Blog server is running...");
 });
 
 // global error handler

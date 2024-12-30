@@ -91,13 +91,9 @@ const deleteBlogIntoDB = async (_id: string) => {
     throw new AppError(StatusCodes.CONFLICT, "Blog not exists!");
   }
 
-  const result = await Blog.findByIdAndUpdate(
-    _id,
-    { isDeleted: true },
-    {
-      new: true,
-    }
-  );
+  const result = await Blog.findByIdAndDelete(_id, {
+    new: true,
+  });
   return result;
 };
 

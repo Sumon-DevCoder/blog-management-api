@@ -29,6 +29,7 @@ const UserSchema = new Schema<TUser>(
       type: "String",
       required: [true, "role is required"],
       enum: Object.values(USER_ROLE),
+      default: USER_ROLE.user,
     },
   },
   { timestamps: true }
