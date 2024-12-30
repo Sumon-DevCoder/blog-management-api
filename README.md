@@ -17,15 +17,7 @@ The Blog Management API powers a dynamic platform built with Node.js, TypeScript
 
 # Project Overview:
 
-The **Blog Management API** is a powerful backend system designed to manage blog posts and user interactions in a scalable and secure manner. Built with **Node.js**, **TypeScript**, **Express**, and **MongoDB**, this API offers a robust solution for handling various blogging features, including:
-
-- **User Authentication**: Secure user registration and login using JWT (JSON Web Tokens), ensuring safe access to the platform.
-- **Blog Post Management**: Allowing users to create, update, view, and delete blog posts with rich text content.
-- **Role-based Access Control (RBAC)**: Differentiating user roles (e.g., Admin, User) to ensure that only authorized users can perform specific actions like content moderation or administrative tasks.
-- **RESTful API Design**: Using RESTful principles, the API ensures smooth communication between the frontend and backend, allowing for easy integration with any user interface or third-party services.
-- **MongoDB for Data Storage**: A flexible NoSQL database to store blog posts, user data, and comments in a structured format, supporting efficient querying and scalability.
-
-The **Blog Management API** aims to deliver a seamless blogging experience with secure access control, content management, and smooth interactions, while ensuring performance and reliability as the platform scales.
+The **Blog Management API** is a powerful backend system designed to manage blog posts and user interactions in a scalable and secure manner. Built with **Node.js**, **TypeScript**, **Express**, and **MongoDB**, this API offers a robust solution for handling various blogging features, including
 
 ## Features
 
