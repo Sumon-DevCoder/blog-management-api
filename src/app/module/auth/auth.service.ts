@@ -32,11 +32,6 @@ const login = async (payload: TLoginUser) => {
     );
   }
 
-  // checking user status
-  if (user.status === "blocked") {
-    throw new Error("User is Blocked");
-  }
-
   // checking isMatchPassword
   const passwordMatch = await isPasswordMatched(
     payload.password,
@@ -65,7 +60,7 @@ const login = async (payload: TLoginUser) => {
     }
   );
 
-  const { password, status, ...userInfo } = user.toObject();
+  const { password, ...userInfo } = user.toObject();
 
   return {
     accessToken,

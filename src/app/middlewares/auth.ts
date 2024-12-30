@@ -29,10 +29,6 @@ export const auth = (...requiredRoles: (keyof typeof USER_ROLE)[]) => {
       throw new AppError(401, "User not found");
     }
 
-    if (user.status === USER_STATUS.blocked) {
-      throw new AppError(401, "User is blocked");
-    }
-
     if (!requiredRoles.includes(role)) {
       throw new AppError(401, "You are not authorized to access this route");
     }
