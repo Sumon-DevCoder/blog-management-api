@@ -4,9 +4,10 @@ import QueryBuilder from "../../builder/QueryBuilder";
 import { TBlog } from "./blog.interface";
 import Blog from "./blog.model";
 import { BlogSearchableFields } from "./blog.constant";
+import { Server } from "socket.io";
 
 // create
-const createBlogIntoDB = async (payload: TBlog) => {
+const createBlogIntoDB = async (payload: TBlog, io: Server) => {
   // Blog checking
   const isBlogExists = await Blog.findOne({
     title: payload.title,
@@ -17,6 +18,14 @@ const createBlogIntoDB = async (payload: TBlog) => {
   }
 
   const result = await Blog.create(payload);
+
+  // Emit a "new-blog" event with the blog data
+  io.emit("new-blog", {
+    title: payload.title,
+    content: payload.content,
+    authorId: payload.authorId,
+  });
+
   return result;
 };
 

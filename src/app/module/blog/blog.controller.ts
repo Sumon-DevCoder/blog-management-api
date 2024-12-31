@@ -6,7 +6,8 @@ import sendResponse from "../../utiils/sendResponse";
 
 // create
 const createBlog = catchAsync(async (req: Request, res: Response) => {
-  const result = await BlogServices.createBlogIntoDB(req.body);
+  const io = req.app.get("io");
+  const result = await BlogServices.createBlogIntoDB(req.body, io);
 
   sendResponse(res, {
     statusCode: StatusCodes.OK,
